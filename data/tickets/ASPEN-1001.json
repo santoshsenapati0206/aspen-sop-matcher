@@ -1,0 +1,27 @@
+{
+  "ticket_id": "ASPEN-1001",
+  "ticket_type": "MLOps Service Request",
+  "status": "OPEN",
+  "priority": "P3",
+  "created_at": "2026-10-20T10:42:00+05:30",
+  "requester": {
+    "name": "Priya Raman",
+    "email": "priya.raman@example.com",
+    "team": "Credit Risk Analytics"
+  },
+  "title": "Need read access to customer_risk tables and scoring UDF in Databricks",
+  "description": "Our team is building a new churn feature set and needs to read data from the Unity Catalog schema 'credit_risk.curated'. Please grant SELECT on the table 'customer_risk_scores' and EXECUTE on the SQL function 'mask_pan'. Access is required in the UAT workspace only. The grant should be given to our AD group, not to individuals.",
+  "request_details": {
+    "environment": "uat",
+    "principal_type": "group",
+    "principal_name": "grp-credit-risk-analytics",
+    "securables": [
+      {"type": "table",    "full_name": "credit_risk.curated.customer_risk_scores", "privilege": "SELECT"},
+      {"type": "function", "full_name": "credit_risk.curated.mask_pan",            "privilege": "EXECUTE"}
+    ],
+    "data_product": "credit-risk-360",
+    "access_duration": "permanent"
+  },
+  "business_justification": "Feature engineering for the Q4 churn model. Read-only access; no writes required.",
+  "attachments": []
+}

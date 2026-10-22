@@ -1,0 +1,25 @@
+{
+  "ticket_id": "ASPEN-1002",
+  "ticket_type": "MLOps Service Request",
+  "status": "OPEN",
+  "priority": "P2",
+  "created_at": "2026-10-21T09:15:00+05:30",
+  "requester": {
+    "name": "Arjun Mehta",
+    "email": "arjun.mehta@example.com",
+    "team": "Pricing ML Platform"
+  },
+  "title": "Create a new service principal for nightly batch inference job",
+  "description": "We are moving our nightly price-elasticity batch inference job from a personal user account to an automated identity. Please provision a NEW service principal in Azure Entra ID and register it in the Databricks dev and prod workspaces. The job runs on a Databricks Workflow triggered by Jenkins. The service principal will be owned by our team lead.",
+  "request_details": {
+    "environment": ["dev", "prod"],
+    "proposed_sp_name": "sp-pricing-batch-inference",
+    "owner": "neha.kulkarni@example.com",
+    "cost_center": "CC-4471",
+    "purpose": "Run scheduled batch inference workflow",
+    "data_product": "pricing-intelligence",
+    "needs_client_secret": true
+  },
+  "business_justification": "Remove dependency on personal credentials for a production job (audit finding AF-2026-118).",
+  "attachments": []
+}
